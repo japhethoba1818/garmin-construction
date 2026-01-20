@@ -10,7 +10,7 @@ export default function ContactPage() {
         <p><strong>Email:</strong> lunga@garminconstruction.co.za</p>
 
         <p style={{ marginTop: 16 }}>
-          <strong>Address 1:</strong> 4030 Apricot Crescent, Thubelisha Greenvillage, Soweto
+          <strong>Address 1:</strong> 475 Kopanong street Simunye Township 1709
         </p>
         <p>
           <strong>Address 2:</strong> 77 Red-Ivory Street, Lufhereng Doornkop 1724
