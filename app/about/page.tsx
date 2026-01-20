@@ -10,7 +10,7 @@ export default function AboutPage() {
         <h2 style={{ fontSize: 20, fontWeight: 900 }}>Company Background</h2>
         <p style={{ marginTop: 8 }}>
           Garmin Construction was established in 2009 (Reg. No. 2009/127892/23) by Lunga Rasmeni (only member of the Close Corporation).
-          The company is 100% black owned and has completed projects working with Chandiro Chahumba.
+          The company is 100% black owned and has completed projects working with Chandiro Chahumba group.
         </p>
       </section>
 
