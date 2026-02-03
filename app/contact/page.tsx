@@ -4,7 +4,7 @@ export default function ContactPage() {
       <h1 style={{ fontSize: 34, fontWeight: 800 }}>Contact</h1>
 
       <div style={{ marginTop: 14, lineHeight: 1.9 }}>
-        <p><strong>Tel:</strong> 011 931 0644</p>
+        <p><strong>Tel:</strong> 011 765 0182</p>
         <p><strong>Cell / WhatsApp:</strong> 065 966 8036</p>
         <p><strong>Email:</strong> info@garminconstruction.co.za</p>
         <p><strong>Email:</strong> lunga@garminconstruction.co.za</p>
