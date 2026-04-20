@@ -28,7 +28,7 @@ export default function RootLayout({
               gap: 14,
             }}
           >
-            <a
+            
               href="/"
               style={{
                 display: "flex",
@@ -47,13 +47,15 @@ export default function RootLayout({
               />
               <span style={{ fontWeight: 900 }}>Garmin Construction</span>
             </a>
-
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
               <a href="/services" style={{ textDecoration: "none", color: "#111111", fontWeight: 700 }}>
                 Services
               </a>
               <a href="/projects" style={{ textDecoration: "none", color: "#111111", fontWeight: 700 }}>
                 Projects
+              </a>
+              <a href="/equipment-hire" style={{ textDecoration: "none", color: "#0d9488", fontWeight: 700 }}>
+                Equipment Hire
               </a>
               <a href="/about" style={{ textDecoration: "none", color: "#111111", fontWeight: 700 }}>
                 About
@@ -67,10 +69,8 @@ export default function RootLayout({
             </div>
           </nav>
         </header>
-
         <main style={{ minHeight: "calc(100vh - 70px)" }}>{children}</main>
-
-        <a
+        
           href="https://wa.me/27659668036?text=Hi%20Garmin%20Construction%2C%20I%20would%20like%20a%20quote."
           target="_blank"
           rel="noreferrer"
@@ -94,5 +94,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-
