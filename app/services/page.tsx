@@ -47,7 +47,7 @@ export default function ServicesPage() {
         <div style={{ border: "1px solid #e5e5e5", borderRadius: 14, padding: 16 }}>
           <h2 style={{ fontSize: 20, fontWeight: 800 }}>Residential flats</h2>
           <p style={{ marginTop: 8, lineHeight: 1.7 }}>
-            Building conducive residential flats to maximise clients property investment strategy and catalyse “right of access to shelter”.
+            Building conducive residential flats to maximise clients property investment strategy and catalyse "right of access to shelter".
           </p>
         </div>
 
@@ -55,6 +55,55 @@ export default function ServicesPage() {
           <h2 style={{ fontSize: 20, fontWeight: 800 }}>Double storeys</h2>
           <p style={{ marginTop: 8, lineHeight: 1.7 }}>
             Building modern storeys. Building high to circumvent land space expansion limitations.
+          </p>
+        </div>
+
+        {/* ── NEW: Grass Cutting & Blowing ── */}
+        <div style={{ border: "1px solid #e5e5e5", borderRadius: 14, padding: 16 }}>
+          <h2 style={{ fontSize: 20, fontWeight: 800 }}>Grass Cutting & Blowing</h2>
+          <p style={{ marginTop: 8, lineHeight: 1.7 }}>
+            Professional lawn maintenance and grounds clearing services using petrol brush cutters
+            and blowers. Available for residential and commercial properties.
+          </p>
+        </div>
+
+        {/* ── NEW: Tools & Equipment Hire ── */}
+        <div
+          style={{
+            border: "2px solid #0d9488",
+            borderRadius: 14,
+            padding: 16,
+            background: "rgba(13,148,136,0.04)",
+          }}
+        >
+          <h2 style={{ fontSize: 20, fontWeight: 800, color: "#0d9488" }}>
+            Tools & Equipment Hire
+          </h2>
+          <p style={{ marginTop: 8, lineHeight: 1.7 }}>
+            Wide range of construction and garden tools available for daily or weekly hire —
+            plate compactors, generators, angle grinders, power floats, brush cutters, ladders,
+            welding machines and more. Pick-up and drop-off available.
+          </p>
+          <Link
+            href="/equipment-hire"
+            style={{
+              display: "inline-block",
+              marginTop: 12,
+              color: "#0d9488",
+              fontWeight: 900,
+              textDecoration: "none",
+            }}
+          >
+            View all hire rates →
+          </Link>
+        </div>
+
+        {/* ── NEW: FLISP ── */}
+        <div style={{ border: "1px solid #e5e5e5", borderRadius: 14, padding: 16 }}>
+          <h2 style={{ fontSize: 20, fontWeight: 800 }}>FLISP Assistance</h2>
+          <p style={{ marginTop: 8, lineHeight: 1.7 }}>
+            We assist qualifying first-time homeowners with the Finance Linked Individual Subsidy
+            Programme (FLISP) — from application guidance through to construction delivery.
           </p>
         </div>
       </section>
@@ -69,8 +118,9 @@ export default function ServicesPage() {
       <section style={{ marginTop: 24, padding: 16, borderRadius: 14, border: "1px solid #e5e5e5" }}>
         <h2 style={{ fontSize: 20, fontWeight: 900 }}>News / Research</h2>
         <p style={{ marginTop: 8, lineHeight: 1.7 }}>
-          Research is based on possibilities of installing fibre on foundations in dolomitic and quagmire lands to monitor and early detect substructure foundation risks
-          (cracks, sinking & deposition/erosion).
+          Research is based on possibilities of installing fibre on foundations in dolomitic and
+          quagmire lands to monitor and early detect substructure foundation risks (cracks, sinking
+          & deposition/erosion).
         </p>
       </section>
 
@@ -88,7 +138,6 @@ export default function ServicesPage() {
         >
           Request a Quote →
         </Link>
-
         <Link href="/" style={{ fontWeight: 800, textDecoration: "none" }}>
           Back to Home
         </Link>
