@@ -30,20 +30,16 @@ export default function Home() {
     setLightboxIndex((lightboxIndex + 1) % projectImages.length);
   };
 
-  // Keyboard navigation + lock scroll
   useEffect(() => {
     if (!isOpen) return;
-
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
       if (e.key === "ArrowLeft") prev();
       if (e.key === "ArrowRight") next();
     };
-
     document.addEventListener("keydown", onKeyDown);
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-
     return () => {
       document.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = prevOverflow;
@@ -71,7 +67,6 @@ export default function Home() {
             priority
             style={{ borderRadius: 12 }}
           />
-
           <div>
             <h1 style={{ margin: 0, fontSize: 36, fontWeight: 900 }}>Garmin Construction</h1>
             <p style={{ margin: "6px 0 0 0", color: "var(--muted)", fontWeight: 700 }}>
@@ -86,15 +81,9 @@ export default function Home() {
         </p>
 
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 14 }}>
-          <a className="btnPrimary" href="/request-quote">
-            Request a Quote
-          </a>
-          <a className="btnGhost" href="/services">
-            View Services
-          </a>
-          <a className="btnGhost" href="tel:0659668036">
-            Call: 065 966 8036
-          </a>
+          <a className="btnPrimary" href="/request-quote">Request a Quote</a>
+          <a className="btnGhost" href="/services">View Services</a>
+          <a className="btnGhost" href="tel:0659668036">Call: 065 966 8036</a>
         </div>
 
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 16 }}>
@@ -130,9 +119,7 @@ export default function Home() {
           ].map(([title, desc]) => (
             <div key={title} className="card">
               <h3 style={{ margin: 0, fontSize: 18, fontWeight: 900 }}>{title}</h3>
-              <p style={{ marginTop: 8, color: "var(--muted)", lineHeight: 1.7 }}>
-                {desc}
-              </p>
+              <p style={{ marginTop: 8, color: "var(--muted)", lineHeight: 1.7 }}>{desc}</p>
             </div>
           ))}
         </div>
@@ -140,6 +127,47 @@ export default function Home() {
         <div style={{ marginTop: 12 }}>
           <a href="/services" style={{ color: "var(--brand)", fontWeight: 900, textDecoration: "none" }}>
             See full service list →
+          </a>
+        </div>
+
+        {/* ── EQUIPMENT HIRE BANNER ── */}
+        <div
+          style={{
+            marginTop: 16,
+            padding: "18px 20px",
+            borderRadius: 16,
+            border: "2px solid #0d9488",
+            background: "rgba(13,148,136,0.05)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: 14,
+          }}
+        >
+          <div>
+            <h3 style={{ margin: 0, fontSize: 18, fontWeight: 900, color: "#0d9488" }}>
+              🔧 Tools & Equipment Hire
+            </h3>
+            <p style={{ margin: "6px 0 0 0", color: "var(--muted)", lineHeight: 1.6, maxWidth: 520 }}>
+              Plate compactors, generators, angle grinders, power floats, brush cutters and more —
+              available daily or weekly. Pick-up & drop-off included.
+            </p>
+          </div>
+          
+            href="/equipment-hire"
+            style={{
+              backgroundColor: "#0d9488",
+              color: "#ffffff",
+              padding: "11px 20px",
+              borderRadius: 10,
+              fontWeight: 900,
+              textDecoration: "none",
+              whiteSpace: "nowrap",
+              fontSize: 14,
+            }}
+          >
+            View Hire Rates →
           </a>
         </div>
       </section>
@@ -172,6 +200,54 @@ export default function Home() {
               </a>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── TEAM STRUCTURE STRIP ── */}
+      <section style={{ marginTop: 18 }}>
+        <h2 style={{ margin: 0, fontSize: 22, fontWeight: 900 }}>Our Team Structure</h2>
+        <p style={{ marginTop: 6, color: "var(--muted)", lineHeight: 1.7 }}>
+          A skilled, experienced team delivering quality on every project.
+        </p>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+            gap: 12,
+            marginTop: 12,
+          }}
+        >
+          {[
+            { role: "Director", color: "#0d9488", text: "#ffffff" },
+            { role: "Civil Engineer", color: "#0f766e", text: "#ffffff" },
+            { role: "Project Manager", color: "#e6f7f6", text: "#0d9488" },
+            { role: "Safety Officer", color: "#e6f7f6", text: "#0d9488" },
+            { role: "General Foreman", color: "#e6f7f6", text: "#0d9488" },
+            { role: "Construction Workers", color: "#f3f4f6", text: "#374151" },
+          ].map(({ role, color, text }) => (
+            <div
+              key={role}
+              style={{
+                backgroundColor: color,
+                color: text,
+                borderRadius: 12,
+                padding: "14px 16px",
+                fontWeight: 900,
+                fontSize: 14,
+                textAlign: "center",
+                border: "1px solid rgba(0,0,0,0.06)",
+              }}
+            >
+              {role}
+            </div>
+          ))}
+        </div>
+
+        <div style={{ marginTop: 12 }}>
+          <a href="/about" style={{ color: "var(--brand)", fontWeight: 900, textDecoration: "none" }}>
+            Full organogram →
+          </a>
         </div>
       </section>
 
@@ -215,14 +291,10 @@ export default function Home() {
                   style={{ objectFit: "cover" }}
                 />
               </div>
-
               <div style={{ padding: 10, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <span style={{ fontWeight: 900, color: "var(--ink)" }}>Project</span>
-                <span style={{ color: "var(--muted)", fontWeight: 800, fontSize: 12 }}>
-                  View →
-                </span>
+                <span style={{ color: "var(--muted)", fontWeight: 800, fontSize: 12 }}>View →</span>
               </div>
-
               <style jsx>{`
                 button:hover {
                   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
@@ -268,7 +340,6 @@ export default function Home() {
               border: "1px solid rgba(255,255,255,0.10)",
             }}
           >
-            {/* Top bar */}
             <div
               style={{
                 display: "flex",
@@ -287,7 +358,6 @@ export default function Home() {
                   Use ← → keys • ESC to close
                 </span>
               </div>
-
               <button
                 type="button"
                 onClick={close}
@@ -306,7 +376,6 @@ export default function Home() {
               </button>
             </div>
 
-            {/* Image area */}
             <div style={{ position: "relative", width: "100%", height: "min(72vh, 720px)" }}>
               <Image
                 src={active.src}
@@ -318,7 +387,6 @@ export default function Home() {
               />
             </div>
 
-            {/* Controls */}
             <div
               style={{
                 display: "flex",
@@ -344,8 +412,7 @@ export default function Home() {
               >
                 ← Previous
               </button>
-
-              <a
+              
                 href={active.src}
                 target="_blank"
                 rel="noreferrer"
@@ -359,7 +426,6 @@ export default function Home() {
               >
                 Open original
               </a>
-
               <button
                 type="button"
                 onClick={next}
@@ -388,24 +454,17 @@ export default function Home() {
             <strong style={{ color: "var(--ink)" }}>Garmin Construction</strong>
             <div>Tangible Difference</div>
           </div>
-
           <div>
-            <div>
-              <strong style={{ color: "var(--ink)" }}>Contact</strong>
-            </div>
+            <div><strong style={{ color: "var(--ink)" }}>Contact</strong></div>
             <div>065 966 8036</div>
             <div>info@garminconstruction.co.za</div>
           </div>
-
           <div>
-            <div>
-              <strong style={{ color: "var(--ink)" }}>Locations</strong>
-            </div>
+            <div><strong style={{ color: "var(--ink)" }}>Locations</strong></div>
             <div>Soweto</div>
             <div>Lufhereng Doornkop</div>
           </div>
         </div>
-
         <div style={{ marginTop: 10, fontSize: 12 }}>
           Reg. No. 2009/127892/23 • NHBRC 3000252906 • Public Liability OT115608992
         </div>
