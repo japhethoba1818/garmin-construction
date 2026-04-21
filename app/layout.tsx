@@ -37,7 +37,7 @@ export default function RootLayout({
                 textDecoration: "none",
                 color: "#111111",
               }}
-            
+            >
               <Image
                 src="/images/logo.jpeg"
                 alt="Garmin Construction logo"
