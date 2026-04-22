@@ -70,16 +70,18 @@ export default function RootLayout({
             </div>
           </nav>
         </header>
-        <main style={{ minHeight: "calc(100vh - 70px)" }}>{children}</main>
-{children}
-      <footer style={{ borderTop: "1px solid #eee", padding: "40px 20px", marginTop: "auto" }}>
-        <div style={{ maxWidth: 980, margin: "0 auto", textAlign: "center" }}>
-          <p style={{ color: "#666", fontSize: "14px" }}>
-            © {new Date().getFullYear()} Garmin Construction. All rights reserved.
-          </p>
-        </div>
-      </footer>
-    </body>
-  </html>
- );
+<main style={{ minHeight: "calc(100vh - 70px)" }}>
+          {children} 
+        </main>
+
+        <footer style={{ borderTop: "1px solid #eee", padding: "40px 20px", marginTop: "auto" }}>
+          <div style={{ maxWidth: 980, margin: "0 auto", textAlign: "center" }}>
+            <p style={{ color: "#666", fontSize: "14px" }}>
+              © {new Date().getFullYear()} Garmin Construction. All rights reserved.
+            </p>
+          </div>
+        </footer>
+      </body>
+    </html>
+  );
 }
