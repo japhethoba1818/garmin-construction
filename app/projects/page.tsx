@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function ProjectsPage() {
   const completed = [
     {
@@ -5,8 +7,8 @@ export default function ProjectsPage() {
       client: "Shomang Construction",
       service: "Face brickworks",
       period: "12 months",
-      value: "R203,274.80",
-      contact: "011 436 1440 (Mr Ramatapa)",
+      value: "R203,247.80",
+      contact: "admin@shomangconstruction.co.za / 011 436 1440",
     },
     {
       title: "43 ETOSHA ESTATE (2024)",
@@ -55,7 +57,7 @@ export default function ProjectsPage() {
     client: "Motheo Construction Group",
     service: "Face brickwork",
     value: "R420,000.00",
-    contact: "084 837 4197 / 011 789 8440 (QS Dumile Mgodlo)",
+    contact: "dumile@motheogroup.co.za / 011 789 8440 (QS Dumile Mgodlo)",
   };
 
   return (
@@ -147,12 +149,19 @@ export default function ProjectsPage() {
         }}
       >
         <div>
-          <div style={{ fontSize: 12, fontWeight: 800, color: "#0d9488", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+          <div style={{
+            fontSize: 12,
+            fontWeight: 800,
+            color: "#0d9488",
+            textTransform: "uppercase",
+            letterSpacing: "0.05em",
+          }}>
             Total Project Portfolio Value
           </div>
           <div style={{ fontSize: 22, fontWeight: 900, marginTop: 2 }}>R1,370,274+</div>
         </div>
-        
+
+        <a
           href="/request-quote"
           style={{
             padding: "11px 18px",
@@ -163,7 +172,7 @@ export default function ProjectsPage() {
             textDecoration: "none",
             fontSize: 14,
           }}
-      
+        >
           Request a Quote →
         </a>
       </section>

@@ -44,8 +44,7 @@ export default function Home() {
       document.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = prevOverflow;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isOpen, lightboxIndex]);
+  }, [isOpen, lightboxIndex, projectImages.length]);
 
   return (
     <main className="container">
@@ -76,8 +75,8 @@ export default function Home() {
         </div>
 
         <p style={{ marginTop: 14, fontSize: 16, lineHeight: 1.7, color: "var(--ink)" }}>
-          Building and civil works with a focus on strong substructures, quality finishes, and reliable delivery —
-          from foundations to modern double storeys.
+          Building and civil works with a focus on strong substructures, quality finishes, and
+          reliable delivery — from foundations to modern double storeys.
         </p>
 
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 14 }}>
@@ -91,6 +90,7 @@ export default function Home() {
           <span className="badge">CIDB Registered</span>
           <span className="badge">NHBRC: 3000252906</span>
           <span className="badge">TCS: 9932056154</span>
+          <span className="badge">100% Black Owned</span>
         </div>
       </section>
 
@@ -130,7 +130,7 @@ export default function Home() {
           </a>
         </div>
 
-        {/* ── EQUIPMENT HIRE BANNER ── */}
+        {/* EQUIPMENT HIRE BANNER */}
         <div
           style={{
             marginTop: 16,
@@ -155,16 +155,18 @@ export default function Home() {
             </p>
           </div>
           
+          <a 
             href="/equipment-hire"
             style={{
               backgroundColor: "#0d9488",
               color: "#ffffff",
               padding: "11px 20px",
-              borderRadius: 10,
-              fontWeight: 900,
+              borderRadius: "10px",
+              fontWeight: "900",
               textDecoration: "none",
               whiteSpace: "nowrap",
-              fontSize: 14,
+              fontSize: "14px",
+              display: "inline-block"
             }}
           >
             View Hire Rates →
@@ -188,9 +190,9 @@ export default function Home() {
           }}
         >
           {[
-            ["JOSHCO Housing (2019)", "Face brickworks • 12 months"],
+            ["JOSHCO Housing (2019)", "Face brickworks • 12 months • R203,247"],
             ["Etosha Estate (2024)", "Refurbishment & patio/carport • 4–6 weeks"],
-            ["Lufhereng Secondary School", "Face brickwork • Current project"],
+            ["Lufhereng Secondary School", "Face brickwork • Current project • R420,000"],
           ].map(([title, meta]) => (
             <div key={title} className="card">
               <h3 style={{ margin: 0, fontSize: 18, fontWeight: 900 }}>{title}</h3>
@@ -203,9 +205,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TEAM STRUCTURE STRIP ── */}
+      {/* TEAM STRUCTURE STRIP */}
       <section style={{ marginTop: 18 }}>
-        <h2 style={{ margin: 0, fontSize: 22, fontWeight: 900 }}>Our Team Structure</h2>
+        <h2 style={{ margin: 0, fontSize: 22, fontWeight: 900 }}>Our Team</h2>
         <p style={{ marginTop: 6, color: "var(--muted)", lineHeight: 1.7 }}>
           A skilled, experienced team delivering quality on every project.
         </p>
@@ -219,13 +221,13 @@ export default function Home() {
           }}
         >
           {[
-            { role: "Director", color: "#0d9488", text: "#ffffff" },
-            { role: "Civil Engineer", color: "#0f766e", text: "#ffffff" },
-            { role: "Project Manager", color: "#e6f7f6", text: "#0d9488" },
-            { role: "Safety Officer", color: "#e6f7f6", text: "#0d9488" },
-            { role: "General Foreman", color: "#e6f7f6", text: "#0d9488" },
-            { role: "Construction Workers", color: "#f3f4f6", text: "#374151" },
-          ].map(({ role, color, text }) => (
+            { role: "Director", name: "Lunga Rasmeni", color: "#0d9488", text: "#ffffff" },
+            { role: "Civil Engineer", name: "Amity Mukombami", color: "#0f766e", text: "#ffffff" },
+            { role: "Project Manager", name: "Murendeni Makhado", color: "#e6f7f6", text: "#0d9488" },
+            { role: "Safety Officer", name: "Sonele Maramncwa", color: "#e6f7f6", text: "#0d9488" },
+            { role: "General Foreman", name: "Liteboho Motuba", color: "#e6f7f6", text: "#0d9488" },
+            { role: "Construction Workers", name: "Blue Team", color: "#f3f4f6", text: "#374151" },
+          ].map(({ role, name, color, text }) => (
             <div
               key={role}
               style={{
@@ -239,7 +241,8 @@ export default function Home() {
                 border: "1px solid rgba(0,0,0,0.06)",
               }}
             >
-              {role}
+              <div>{role}</div>
+              <div style={{ fontWeight: 600, fontSize: 12, marginTop: 4, opacity: 0.8 }}>{name}</div>
             </div>
           ))}
         </div>
@@ -279,6 +282,7 @@ export default function Home() {
                 cursor: "pointer",
                 textAlign: "left",
                 background: "transparent",
+                border: "none",
               }}
               aria-label={`Open image ${idx + 1} in gallery`}
             >
@@ -292,20 +296,9 @@ export default function Home() {
                 />
               </div>
               <div style={{ padding: 10, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span style={{ fontWeight: 900, color: "var(--ink)" }}>Project</span>
+                <span style={{ fontWeight: 900, color: "var(--ink)" }}>Project {idx + 1}</span>
                 <span style={{ color: "var(--muted)", fontWeight: 800, fontSize: 12 }}>View →</span>
               </div>
-              <style jsx>{`
-                button:hover {
-                  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-                  transform: translateY(-2px);
-                  transition: all 180ms ease;
-                }
-                button:focus-visible {
-                  outline: 3px solid rgba(18, 162, 161, 0.35);
-                  outline-offset: 3px;
-                }
-              `}</style>
             </button>
           ))}
         </div>
@@ -352,7 +345,7 @@ export default function Home() {
             >
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <span style={{ color: "rgba(255,255,255,0.9)", fontWeight: 900 }}>
-                  {lightboxIndex! + 1} / {projectImages.length}
+                  {(lightboxIndex ?? 0) + 1} / {projectImages.length}
                 </span>
                 <span style={{ color: "rgba(255,255,255,0.65)", fontWeight: 700, fontSize: 12 }}>
                   Use ← → keys • ESC to close
@@ -412,7 +405,7 @@ export default function Home() {
               >
                 ← Previous
               </button>
-              
+              <a
                 href={active.src}
                 target="_blank"
                 rel="noreferrer"
@@ -438,7 +431,6 @@ export default function Home() {
                   cursor: "pointer",
                   fontWeight: 900,
                 }}
-                aria-label="Next image"
               >
                 Next →
               </button>
@@ -446,29 +438,6 @@ export default function Home() {
           </div>
         </div>
       )}
-
-      {/* FOOTER */}
-      <footer style={{ marginTop: 22, paddingTop: 16, borderTop: "1px solid var(--line)", color: "var(--muted)" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", gap: 14, flexWrap: "wrap" }}>
-          <div>
-            <strong style={{ color: "var(--ink)" }}>Garmin Construction</strong>
-            <div>Tangible Difference</div>
-          </div>
-          <div>
-            <div><strong style={{ color: "var(--ink)" }}>Contact</strong></div>
-            <div>065 966 8036</div>
-            <div>info@garminconstruction.co.za</div>
-          </div>
-          <div>
-            <div><strong style={{ color: "var(--ink)" }}>Locations</strong></div>
-            <div>Soweto</div>
-            <div>Lufhereng Doornkop</div>
-          </div>
-        </div>
-        <div style={{ marginTop: 10, fontSize: 12 }}>
-          Reg. No. 2009/127892/23 • NHBRC 3000252906 • Public Liability OT115608992
-        </div>
-      </footer>
     </main>
   );
 }

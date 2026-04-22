@@ -57,15 +57,6 @@ const equipmentCategories = [
     ],
   },
   {
-    id: "concrete",
-    title: "Concrete Equipment",
-    icon: "🏗️",
-    items: [
-      { name: "Power Float (incl. blade)", daily: "R773.91", weekly: "R3 095.64" },
-      { name: "Brick Cutter (Petrol)", daily: "R420.00", weekly: "R1 680.00" },
-    ],
-  },
-  {
     id: "measuring",
     title: "Measuring Tools",
     icon: "📏",
@@ -83,11 +74,20 @@ const equipmentCategories = [
     icon: "🪜",
     items: [
       { name: "Builder's H/Duty Trestles", daily: "R266.34", weekly: "R1 065.36" },
-      { name: "Folding Ladders (6&8m)", daily: "R251.74", weekly: "R1 006.96" },
+      { name: "Folding Ladders (6 & 8m)", daily: "R251.74", weekly: "R1 006.96" },
       { name: "Auger", daily: "R730.35", weekly: "R2 921.40" },
       { name: "Hammer (6 pounds)", daily: "R65.00", weekly: "R260.00" },
       { name: "Hammer (4 pounds)", daily: "R43.00", weekly: "R172.00" },
       { name: "Claw Nail Hammer", daily: "R15.60", weekly: "R62.40" },
+    ],
+  },
+  {
+    id: "concrete",
+    title: "Concrete Equipment",
+    icon: "🏗️",
+    items: [
+      { name: "Power Float (incl. blade)", daily: "R773.91", weekly: "R3 095.64" },
+      { name: "Brick Cutter (Petrol)", daily: "R420.00", weekly: "R1 680.00" },
     ],
   },
 ];
@@ -109,7 +109,14 @@ export default function EquipmentHirePage() {
 
       {/* HERO */}
       <div style={{ marginBottom: 28 }}>
-        <p style={{ fontSize: 12, fontWeight: 800, color: "#0d9488", textTransform: "uppercase", letterSpacing: "0.08em", margin: 0 }}>
+        <p style={{
+          fontSize: 12,
+          fontWeight: 800,
+          color: "#0d9488",
+          textTransform: "uppercase",
+          letterSpacing: "0.08em",
+          margin: 0,
+        }}>
           Tools & Equipment
         </p>
         <h1 style={{ fontSize: 34, fontWeight: 800, margin: "6px 0 0 0" }}>Equipment Hire</h1>
@@ -118,20 +125,41 @@ export default function EquipmentHirePage() {
           Pick-up and drop-off available. All prices exclude VAT.
         </p>
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 14 }}>
-          
-            href="tel:0117650182"
-            style={{ background: "#0d9488", color: "#fff", padding: "10px 18px", borderRadius: 10, fontWeight: 800, textDecoration: "none", fontSize: 14 }}
-          >
-            Call: 011 765 0182
-          </a>
-          
-            href="https://wa.me/27659668036"
-            target="_blank"
-            rel="noreferrer"
-            style={{ border: "2px solid #0d9488", color: "#0d9488", padding: "10px 18px", borderRadius: 10, fontWeight: 800, textDecoration: "none", fontSize: 14 }}
-          >
-            WhatsApp Us
-          </a>
+        <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 14 }}>
+  <a 
+    href="tel:0117650182"
+    style={{
+      backgroundColor: "#0d9488",
+      color: "#fff",
+      padding: "10px 18px",
+      borderRadius: "10px",
+      fontWeight: "800",
+      textDecoration: "none",
+      fontSize: "14px",
+      display: "inline-block"
+    }}
+  >
+    Call: 011 765 0182
+  </a>
+
+  <a 
+    href="https://wa.me/27659668036"
+    target="_blank"
+    rel="noreferrer"
+    style={{
+      border: "2px solid #0d9488",
+      color: "#0d9488",
+      padding: "10px 18px",
+      borderRadius: "10px",
+      fontWeight: "800",
+      textDecoration: "none",
+      fontSize: "14px",
+      display: "inline-block"
+    }}
+  >
+    WhatsApp Us →
+  </a>
+</div>
         </div>
       </div>
 
@@ -156,7 +184,7 @@ export default function EquipmentHirePage() {
               }}
             >
               <span>Item</span>
-              <span style={{ textAlign: "right" }}>Daily</span>
+              <span style={{ textAlign: "right" }}>Daily (excl. VAT)</span>
               <span style={{ textAlign: "right" }}>Weekly</span>
               <span style={{ textAlign: "right" }}>Action</span>
             </div>
@@ -224,7 +252,7 @@ export default function EquipmentHirePage() {
           borderRadius: 16,
           padding: "24px 20px",
           textAlign: "center",
-          marginBottom: 8,
+          marginBottom: 32,
         }}
       >
         <h2 style={{ color: "#fff", fontWeight: 900, fontSize: 22, margin: 0 }}>
@@ -234,21 +262,39 @@ export default function EquipmentHirePage() {
           Call or WhatsApp us to check availability and book your equipment.
         </p>
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginTop: 16 }}>
-          
-            href="tel:0659668036"
-            style={{ background: "#fff", color: "#0d9488", padding: "11px 20px", borderRadius: 10, fontWeight: 900, textDecoration: "none", fontSize: 14 }}
-          >
-            Call: 065 966 8036
-          </a>
-          <Link
-            href="/request-quote?type=hire"
-            style={{ border: "2px solid #fff", color: "#fff", padding: "11px 20px", borderRadius: 10, fontWeight: 900, textDecoration: "none", fontSize: 14 }}
-          >
-            Submit Request Online
-          </Link>
-        </div>
-      </section>
+  <a 
+    href="tel:0659668036"
+    style={{
+      backgroundColor: "#fff",
+      color: "#0d9488",
+      padding: "11px 20px",
+      borderRadius: "10px",
+      fontWeight: "900",
+      textDecoration: "none",
+      fontSize: "14px",
+      display: "inline-block"
+    }}
+  >
+    Call: 065 966 8036
+  </a>
 
-    </main>
-  );
+  <Link 
+    href="/request-quote?type=hire"
+    style={{
+      border: "2px solid #fff",
+      color: "#fff",
+      padding: "11px 20px",
+      borderRadius: "10px",
+      fontWeight: "900",
+      textDecoration: "none",
+      fontSize: "14px",
+      display: "inline-block"
+    }}
+  >
+    Request a Quote →
+  </Link>
+   </div>
+  </section>
+ </main>
+ );
 }

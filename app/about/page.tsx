@@ -8,9 +8,14 @@ export default function AboutPage() {
       <section style={{ marginTop: 18, lineHeight: 1.8 }}>
         <h2 style={{ fontSize: 20, fontWeight: 900 }}>Company Background</h2>
         <p style={{ marginTop: 8 }}>
-          Garmin Construction was established in 2009 (Reg. No. 2009/127892/23) by Lunga Rasmeni
-          (only member of the Close Corporation). The company is 100% black owned, with a footprint
-          in Gauteng province and services provided nationwide.
+          Garmin Construction was established in 2009 (Reg. No. 2009/127892/23) by{" "}
+          <strong>Lunga Rasmeni</strong>, the only member of the Close Corporation. The company is{" "}
+          <strong>100% black owned</strong>, operating as a close corporation with a footprint in
+          Gauteng province and providing services nationwide.
+        </p>
+        <p style={{ marginTop: 8 }}>
+          Services offered include General Building & Civil Works, Grass Cutting & Blowing, and
+          Tools & Equipment Hire — under the motto <em>"Tangible Difference"</em>.
         </p>
       </section>
 
@@ -26,13 +31,34 @@ export default function AboutPage() {
       {/* CORE VALUES */}
       <section style={{ marginTop: 18, lineHeight: 1.8 }}>
         <h2 style={{ fontSize: 20, fontWeight: 900 }}>Core Values</h2>
-        <ul style={{ marginTop: 8 }}>
-          <li>Respect people</li>
-          <li>Deliver high-quality products</li>
-        </ul>
+        <div
+          style={{
+            marginTop: 12,
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            gap: 12,
+          }}
+        >
+          {["Respect people", "Deliver high-quality products"].map((value) => (
+            <div
+              key={value}
+              style={{
+                background: "rgba(13,148,136,0.06)",
+                border: "1px solid #0d9488",
+                borderRadius: 12,
+                padding: "14px 16px",
+                fontWeight: 700,
+                color: "#0d9488",
+                fontSize: 15,
+              }}
+            >
+              ✓ {value}
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* COMPANY DETAILS GRID */}
+      {/* REGISTRATIONS */}
       <section style={{ marginTop: 24 }}>
         <h2 style={{ fontSize: 20, fontWeight: 900, marginBottom: 14 }}>
           Registrations & Affiliations
@@ -64,7 +90,13 @@ export default function AboutPage() {
                 backgroundColor: "#fafafa",
               }}
             >
-              <div style={{ fontSize: 11, fontWeight: 800, color: "#0d9488", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+              <div style={{
+                fontSize: 11,
+                fontWeight: 800,
+                color: "#0d9488",
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
+              }}>
                 {label}
               </div>
               <div style={{ marginTop: 4, fontWeight: 700, fontSize: 14, color: "#111" }}>
@@ -77,41 +109,30 @@ export default function AboutPage() {
 
       {/* ORGANOGRAM */}
       <section style={{ marginTop: 32 }}>
-        <h2 style={{ fontSize: 20, fontWeight: 900, marginBottom: 6 }}>Organogram</h2>
-        <p style={{ color: "#6b7280", marginBottom: 20, lineHeight: 1.7 }}>
+        <h2 style={{ fontSize: 20, fontWeight: 900, marginBottom: 6 }}>Our Team</h2>
+        <p style={{ color: "#6b7280", marginBottom: 24, lineHeight: 1.7 }}>
           Our team structure ensures clear accountability and quality delivery on every project.
         </p>
 
         {/* Tier 1 — Director */}
         <div style={{ display: "flex", justifyContent: "center", marginBottom: 0 }}>
-          <div style={tierBox("#0d9488", "#ffffff", true)}>Director</div>
+          <div style={tierBox("#0d9488", "#ffffff", true)}>
+            <div>Director</div>
+            <div style={{ fontSize: 13, fontWeight: 700, opacity: 0.85, marginTop: 4 }}>Lunga Rasmeni</div>
+          </div>
         </div>
 
-        {/* Connector */}
         <div style={connector} />
 
         {/* Tier 2 — Civil Engineer */}
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <div style={tierBox("#0f766e", "#ffffff", false)}>Civil Engineer</div>
+          <div style={tierBox("#0f766e", "#ffffff", false)}>
+            <div>Civil Engineer</div>
+            <div style={{ fontSize: 12, fontWeight: 600, opacity: 0.85, marginTop: 4 }}>Amity Mukombami</div>
+          </div>
         </div>
 
-        {/* Connector */}
         <div style={connector} />
-
-        {/* Horizontal line spanning tier 3 */}
-        <div style={{ display: "flex", justifyContent: "center", position: "relative" }}>
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "60%",
-              height: 2,
-              backgroundColor: "#d1d5db",
-            }}
-          />
-        </div>
 
         {/* Tier 3 — Safety / PM / Foreman */}
         <div
@@ -119,20 +140,22 @@ export default function AboutPage() {
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
             gap: 12,
-            marginTop: 18,
             maxWidth: 700,
-            marginLeft: "auto",
-            marginRight: "auto",
+            margin: "0 auto",
           }}
         >
-          {["Safety Officer", "Project Manager", "General Foreman"].map((role) => (
+          {[
+            { role: "Safety Officer", name: "Sonele Maramncwa" },
+            { role: "Project Manager", name: "Murendeni Makhado" },
+            { role: "General Foreman", name: "Liteboho Motuba" },
+          ].map(({ role, name }) => (
             <div key={role} style={tierBox("#e6f7f6", "#0d9488", false)}>
-              {role}
+              <div>{role}</div>
+              <div style={{ fontSize: 12, fontWeight: 600, opacity: 0.8, marginTop: 4 }}>{name}</div>
             </div>
           ))}
         </div>
 
-        {/* Connector */}
         <div style={connector} />
 
         {/* Tier 4 — Operators + Workers */}
@@ -142,24 +165,64 @@ export default function AboutPage() {
             gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
             gap: 12,
             maxWidth: 700,
-            marginLeft: "auto",
-            marginRight: "auto",
+            margin: "0 auto",
           }}
         >
-          {["Brushcutter Operator", "Brushcutter Operator", "Construction Workers"].map(
-            (role, i) => (
-              <div key={i} style={tierBox("#f3f4f6", "#374151", false)}>
-                {role}
-              </div>
-            )
-          )}
+          {[
+            { role: "Brushcutter Operator", name: "Justice Maseko" },
+            { role: "Brushcutter Operator", name: "Sbusiso Ximba" },
+            { role: "Construction Workers", name: "Blue Team" },
+          ].map(({ role, name }, i) => (
+            <div key={i} style={tierBox("#f3f4f6", "#374151", false)}>
+              <div>{role}</div>
+              <div style={{ fontSize: 12, fontWeight: 600, opacity: 0.7, marginTop: 4 }}>{name}</div>
+            </div>
+          ))}
         </div>
+      </section>
+
+      {/* CONTACT CTA */}
+      <section
+        style={{
+          marginTop: 36,
+          padding: "20px 22px",
+          borderRadius: 14,
+          background: "#f0fdfa",
+          border: "1px solid #0d9488",
+          display: "flex",
+          justifyContent: "space-between",
+          flexWrap: "wrap",
+          gap: 14,
+          alignItems: "center",
+        }}
+      >
+        <div>
+          <div style={{ fontWeight: 900, fontSize: 16 }}>Get in touch</div>
+          <div style={{ color: "#444", marginTop: 4, lineHeight: 1.7 }}>
+            77 Red-Ivory Street, Lufhereng, Joburg 1724<br />
+            Tel: 011 765 0182 | Cell: 065 966 8036<br />
+            info@garminconstruction.co.za
+          </div>
+        </div>
+        <a 
+  href="/contact"
+  style={{
+    backgroundColor: "#0d9488",
+    color: "#fff",
+    padding: "11px 20px",
+    borderRadius: "10px",
+    fontWeight: "900",
+    textDecoration: "none",
+    fontSize: "14px",
+    display: "inline-block"
+  }}
+>
+  Contact Us →
+</a>
       </section>
     </main>
   );
 }
-
-// ── Helpers ──────────────────────────────────────────────────
 
 const connector: React.CSSProperties = {
   width: 2,

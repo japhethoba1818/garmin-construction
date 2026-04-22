@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+// @ts-ignore
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -28,25 +29,25 @@ export default function RootLayout({
               gap: 14,
             }}
           >
-            
-              href="/"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 10,
-                textDecoration: "none",
-                color: "#111111",
-              }}
-            >
-              <Image
-                src="/images/logo.jpeg"
-                alt="Garmin Construction logo"
-                width={34}
-                height={34}
-                priority
-              />
-              <span style={{ fontWeight: 900 }}>Garmin Construction</span>
-            </a>
+<a 
+  href="/" 
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: "10px",
+    textDecoration: "none",
+    color: "#111111"
+  }}
+>
+  <Image
+    src="/images/logo.jpeg"
+    alt="Garmin Construction logo"
+    width={34}
+    height={34}
+    priority
+  />
+  <span style={{ fontWeight: 900 }}>Garmin Construction</span>
+</a>
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
               <a href="/services" style={{ textDecoration: "none", color: "#111111", fontWeight: 700 }}>
                 Services
@@ -70,27 +71,15 @@ export default function RootLayout({
           </nav>
         </header>
         <main style={{ minHeight: "calc(100vh - 70px)" }}>{children}</main>
-        
-          href="https://wa.me/27659668036?text=Hi%20Garmin%20Construction%2C%20I%20would%20like%20a%20quote."
-          target="_blank"
-          rel="noreferrer"
-          style={{
-            position: "fixed",
-            right: 18,
-            bottom: 18,
-            backgroundColor: "#111111",
-            color: "#ffffff",
-            padding: "12px 14px",
-            borderRadius: 999,
-            fontWeight: 800,
-            textDecoration: "none",
-            boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
-            zIndex: 9999,
-          }}
-        >
-          WhatsApp Us
-        </a>
-      </body>
-    </html>
-  );
+{children}
+      <footer style={{ borderTop: "1px solid #eee", padding: "40px 20px", marginTop: "auto" }}>
+        <div style={{ maxWidth: 980, margin: "0 auto", textAlign: "center" }}>
+          <p style={{ color: "#666", fontSize: "14px" }}>
+            © {new Date().getFullYear()} Garmin Construction. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </body>
+  </html>
+ );
 }
