@@ -3,6 +3,32 @@
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 
+function ProjectsCarousel({
+  images,
+}: {
+  images: { src: string; alt: string }[];
+}) {
+  const track = useMemo(() => [...images, ...images], [images]);
+
+  return (
+    <div className="carouselWrap">
+      <div className="carouselTrack">
+        {track.map((img, i) => (
+          <div className="carouselItem" key={`${img.src}-${i}`}>
+            <Image
+              src={img.src}
+              alt={img.alt}
+              fill
+              sizes="(max-width: 640px) 60vw, 280px"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const projectImages = useMemo(
     () =>
@@ -74,15 +100,16 @@ export default function Home() {
           </div>
         </div>
 
-        <p style={{ marginTop: 14, fontSize: 16, lineHeight: 1.7, color: "var(--ink)" }}>
-          Building and civil works with a focus on strong substructures, quality finishes, and
-          reliable delivery — from foundations to modern double storeys.
+        <h2 className="heroHeadline">Building Excellence Since 2009</h2>
+        <p className="heroSub">
+          Professional construction, renovations, paving, painting, brickwork, foundations and
+          equipment hire.
         </p>
 
-        <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 14 }}>
+        <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 16 }}>
           <a className="btnPrimary" href="/request-quote">Request a Quote</a>
+          <a className="btnGhost" href="tel:0659668036">Call Now</a>
           <a className="btnGhost" href="/services">View Services</a>
-          <a className="btnGhost" href="tel:0659668036">Call: 065 966 8036</a>
         </div>
 
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 16 }}>
@@ -91,6 +118,34 @@ export default function Home() {
           <span className="badge">NHBRC: 3000252906</span>
           <span className="badge">TCS: 9932056154</span>
           <span className="badge">100% Black Owned</span>
+        </div>
+      </section>
+
+      {/* STATS CARDS */}
+      <section style={{ marginTop: 18 }}>
+        <div className="statsGrid">
+          {[
+            ["🏗️", "Established 2009"],
+            ["✅", "CIDB Registered"],
+            ["🛡️", "NHBRC Registered"],
+            ["⭐", "15+ Years Experience"],
+          ].map(([icon, label]) => (
+            <div key={label} className="statCard">
+              <div className="statIcon">{icon}</div>
+              <div className="statLabel">{label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* OUR RECENT PROJECTS — AUTO-SCROLLING CAROUSEL */}
+      <section style={{ marginTop: 18 }}>
+        <h2 style={{ margin: 0, fontSize: 22, fontWeight: 900 }}>Our Recent Projects</h2>
+        <p style={{ marginTop: 6, color: "var(--muted)", lineHeight: 1.7 }}>
+          A continuous look at our completed and current work. Hover to pause.
+        </p>
+        <div style={{ marginTop: 12 }}>
+          <ProjectsCarousel images={projectImages} />
         </div>
       </section>
 
@@ -154,8 +209,8 @@ export default function Home() {
               available daily or weekly. Pick-up & drop-off included.
             </p>
           </div>
-          
-          <a 
+
+          <a
             href="/equipment-hire"
             style={{
               backgroundColor: "#0d9488",
@@ -166,7 +221,7 @@ export default function Home() {
               textDecoration: "none",
               whiteSpace: "nowrap",
               fontSize: "14px",
-              display: "inline-block"
+              display: "inline-block",
             }}
           >
             View Hire Rates →

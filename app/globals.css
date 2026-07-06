@@ -68,3 +68,102 @@ a{ color: inherit; }
   font-size: 13px;
   color: var(--muted);
 }
+/* ===== Hero enhancements ===== */
+.heroHeadline{
+  margin: 18px 0 8px 0;
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.heroSub{
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 620px;
+}
+
+@media (max-width: 640px){
+  .heroHeadline{ font-size: 26px; }
+}
+
+/* ===== Stats cards ===== */
+.statsGrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.statCard{
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px 16px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.statCard:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+}
+
+.statCard .statIcon{
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.statCard .statLabel{
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--ink);
+}
+
+/* ===== Auto-scrolling carousel ===== */
+.carouselWrap{
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.carouselTrack{
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: scrollCarousel 45s linear infinite;
+}
+
+.carouselWrap:hover .carouselTrack{
+  animation-play-state: paused;
+}
+
+.carouselItem{
+  position: relative;
+  flex: 0 0 auto;
+  width: 280px;
+  height: 190px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.carouselItem:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.16);
+}
+
+@keyframes scrollCarousel{
+  0%{ transform: translateX(0); }
+  100%{ transform: translateX(-50%); }
+}
+
+@media (max-width: 640px){
+  .carouselItem{ width: 200px; height: 140px; }
+  .carouselTrack{ animation-duration: 30s; gap: 12px; }
+}
