@@ -7,7 +7,6 @@ export default function ProjectsPage() {
       client: "Shomang Construction",
       service: "Face brickworks",
       period: "12 months",
-      value: "R203,247.80",
       contact: "admin@shomangconstruction.co.za / 011 436 1440",
     },
     {
@@ -15,7 +14,6 @@ export default function ProjectsPage() {
       client: "Xaba family",
       service: "Refurbishment & carport",
       period: "6 weeks",
-      value: "R87,000.00",
       contact: "083 299 7405 (Mr Thando Xaba)",
     },
     {
@@ -23,7 +21,6 @@ export default function ProjectsPage() {
       client: "Robinson family",
       service: "Refurbishment & patio",
       period: "4 weeks",
-      value: "R94,000.00",
       contact: "082 602 2522 (Mrs Lisa Robinson)",
     },
     {
@@ -31,7 +28,6 @@ export default function ProjectsPage() {
       client: "Mreki Family",
       service: "Full turnkey house build",
       period: "—",
-      value: "R284,000.00",
       contact: "073 441 2303 (Dilah)",
     },
     {
@@ -39,7 +35,6 @@ export default function ProjectsPage() {
       client: "Mr. Robinson",
       service: "Garage conversion",
       period: "—",
-      value: "R112,000.00",
       contact: "072 233 0166 (Mr. Robinson)",
     },
     {
@@ -47,7 +42,6 @@ export default function ProjectsPage() {
       client: "GDE Gauteng",
       service: "School buildings renovation",
       period: "—",
-      value: "—",
       contact: "GDE Gauteng",
     },
   ];
@@ -56,7 +50,6 @@ export default function ProjectsPage() {
     title: "LUFHERENG SECONDARY SCHOOL",
     client: "Motheo Construction Group",
     service: "Face brickwork",
-    value: "R420,000.00",
     contact: "dumile@motheogroup.co.za / 011 789 8440 (QS Dumile Mgodlo)",
   };
 
@@ -99,7 +92,6 @@ export default function ProjectsPage() {
           <div style={{ marginTop: 10, display: "grid", gap: 4, color: "#444", lineHeight: 1.7 }}>
             <p style={{ margin: 0 }}><strong>Client:</strong> {current.client}</p>
             <p style={{ margin: 0 }}><strong>Service:</strong> {current.service}</p>
-            <p style={{ margin: 0 }}><strong>Value:</strong> {current.value}</p>
             <p style={{ margin: 0 }}><strong>Contact:</strong> {current.contact}</p>
           </div>
         </div>
@@ -121,9 +113,6 @@ export default function ProjectsPage() {
                 {p.period !== "—" && (
                   <p style={{ margin: 0 }}><strong>Period:</strong> {p.period}</p>
                 )}
-                {p.value !== "—" && (
-                  <p style={{ margin: 0 }}><strong>Value:</strong> {p.value}</p>
-                )}
                 {p.contact !== "—" && (
                   <p style={{ margin: 0 }}><strong>Contact:</strong> {p.contact}</p>
                 )}
@@ -131,50 +120,6 @@ export default function ProjectsPage() {
             </div>
           ))}
         </div>
-      </section>
-
-      {/* TOTAL VALUE STRIP */}
-      <section
-        style={{
-          marginTop: 24,
-          padding: "14px 18px",
-          borderRadius: 14,
-          background: "#f9fafb",
-          border: "1px solid #e5e7eb",
-          display: "flex",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-          gap: 10,
-          alignItems: "center",
-        }}
-      >
-        <div>
-          <div style={{
-            fontSize: 12,
-            fontWeight: 800,
-            color: "#0d9488",
-            textTransform: "uppercase",
-            letterSpacing: "0.05em",
-          }}>
-            Total Project Portfolio Value
-          </div>
-          <div style={{ fontSize: 22, fontWeight: 900, marginTop: 2 }}>R1,370,274+</div>
-        </div>
-
-        <a
-          href="/request-quote"
-          style={{
-            padding: "11px 18px",
-            borderRadius: 12,
-            background: "#111",
-            color: "#fff",
-            fontWeight: 800,
-            textDecoration: "none",
-            fontSize: 14,
-          }}
-        >
-          Request a Quote →
-        </a>
       </section>
     </main>
   );

@@ -245,9 +245,9 @@ export default function Home() {
           }}
         >
           {[
-            ["JOSHCO Housing (2019)", "Face brickworks • 12 months • R203,247"],
+            ["JOSHCO Housing (2019)", "Face brickworks • 12 months"],
             ["Etosha Estate (2024)", "Refurbishment & patio/carport • 4–6 weeks"],
-            ["Lufhereng Secondary School", "Face brickwork • Current project • R420,000"],
+            ["Lufhereng Secondary School", "Face brickwork • Current project"],
           ].map(([title, meta]) => (
             <div key={title} className="card">
               <h3 style={{ margin: 0, fontSize: 18, fontWeight: 900 }}>{title}</h3>
