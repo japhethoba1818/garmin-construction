@@ -108,7 +108,7 @@ export default function Home() {
 
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 16 }}>
           <a className="btnPrimary" href="/request-quote">Request a Quote</a>
-          <a className="btnGhost" href="tel:0659668036">Call Now</a>
+          <a className="btnGhost" href="tel:0693116655">Call Now</a>
           <a className="btnGhost" href="/services">View Services</a>
         </div>
 

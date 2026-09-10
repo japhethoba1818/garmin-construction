@@ -48,8 +48,8 @@ export default function ContactPage() {
         </p>
         <p>
           <strong>Cell / WhatsApp:</strong>{" "}
-          <a href="tel:0659668036" style={{ color: "var(--brand)", fontWeight: 800, textDecoration: "none" }}>
-            065 966 8036
+          <a href="tel:0693116655" style={{ color: "var(--brand)", fontWeight: 800, textDecoration: "none" }}>
+            069 311 6655
           </a>
         </p>
         <p>

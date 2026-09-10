@@ -111,7 +111,7 @@ export default function ServicesPage() {
       <section style={{ marginTop: 24, padding: 16, borderRadius: 14, border: "1px solid #e5e5e5" }}>
         <h2 style={{ fontSize: 20, fontWeight: 900 }}>Accounts, turnkey projects & drawing plans</h2>
         <p style={{ marginTop: 8, lineHeight: 1.7 }}>
-          Contact: <strong>065 966 8036</strong> / <strong>lunga@garminconstruction.co.za</strong>
+          Contact: <strong>069 311 6655</strong> / <strong>lunga@garminconstruction.co.za</strong>
         </p>
       </section>
 

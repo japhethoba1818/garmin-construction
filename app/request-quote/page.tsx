@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const WHATSAPP_NUMBER = "27659668036"; // +27 65 966 8036 (no +, no spaces)
+const WHATSAPP_NUMBER = "27693116655"; // +27 69 311 6655 (no +, no spaces)
 
 export default function RequestQuotePage() {
   const [services, setServices] = useState<string[]>([]);

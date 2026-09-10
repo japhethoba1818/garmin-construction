@@ -143,7 +143,7 @@ export default function EquipmentHirePage() {
   </a>
 
   <a 
-    href="https://wa.me/27659668036"
+    href="https://wa.me/27693116655"
     target="_blank"
     rel="noreferrer"
     style={{
@@ -263,7 +263,7 @@ export default function EquipmentHirePage() {
         </p>
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginTop: 16 }}>
   <a 
-    href="tel:0659668036"
+    href="tel:0693116655"
     style={{
       backgroundColor: "#fff",
       color: "#0d9488",
@@ -275,7 +275,7 @@ export default function EquipmentHirePage() {
       display: "inline-block"
     }}
   >
-    Call: 065 966 8036
+    Call: 069 311 6655
   </a>
 
   <Link 

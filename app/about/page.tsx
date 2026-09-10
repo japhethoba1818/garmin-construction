@@ -200,7 +200,7 @@ export default function AboutPage() {
           <div style={{ fontWeight: 900, fontSize: 16 }}>Get in touch</div>
           <div style={{ color: "#444", marginTop: 4, lineHeight: 1.7 }}>
             77 Red-Ivory Street, Lufhereng, Joburg 1724<br />
-            Tel: 011 765 0182 | Cell: 065 966 8036<br />
+            Tel: 011 765 0182 | Cell: 069 311 6655<br />
             info@garminconstruction.co.za
           </div>
         </div>
