@@ -146,7 +146,7 @@ export default function AboutPage() {
         >
           {[
             { role: "Safety Officer", name: "Sonele Maramncwa" },
-            { role: "Project Manager", name: "Murendeni Makhado" },
+            { role: "Project Manager", name: "Vacant" },
             { role: "General Foreman", name: "Liteboho Motuba" },
           ].map(({ role, name }) => (
             <div key={role} style={tierBox("#e6f7f6", "#0d9488", false)}>

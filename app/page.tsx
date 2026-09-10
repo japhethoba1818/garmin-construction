@@ -278,7 +278,7 @@ export default function Home() {
           {[
             { role: "Director", name: "Lunga Rasmeni", color: "#0d9488", text: "#ffffff" },
             { role: "Civil Engineer", name: "Amity Mukombami", color: "#0f766e", text: "#ffffff" },
-            { role: "Project Manager", name: "Murendeni Makhado", color: "#e6f7f6", text: "#0d9488" },
+            { role: "Project Manager", name: "Vacant", color: "#e6f7f6", text: "#0d9488" },
             { role: "Safety Officer", name: "Sonele Maramncwa", color: "#e6f7f6", text: "#0d9488" },
             { role: "General Foreman", name: "Liteboho Motuba", color: "#e6f7f6", text: "#0d9488" },
             { role: "Construction Workers", name: "Blue Team", color: "#f3f4f6", text: "#374151" },
