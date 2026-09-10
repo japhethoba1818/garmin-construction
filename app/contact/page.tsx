@@ -64,12 +64,8 @@ export default function ContactPage() {
             lunga@garminconstruction.co.za
           </a>
         </p>
-
-        <p style={{ marginTop: 16 }}>
-          <strong>Address 1:</strong> 475 Kopanong street Simunye Township 1779
-        </p>
         <p>
-          <strong>Address 2:</strong> 77 Red-Ivory Street, Lufhereng Doornkop 1724
+          <strong>Address:</strong> 77 Red-Ivory Street, Lufhereng Doornkop 1724
         </p>
       </div>
 
