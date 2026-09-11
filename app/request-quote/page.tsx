@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { supabase } from "../../lib/supabaseClient";
 
 const WHATSAPP_NUMBER = "27693116655"; // +27 69 311 6655 (no +, no spaces)
 
@@ -16,6 +17,7 @@ export default function RequestQuotePage() {
   const [email, setEmail] = useState("");
   const [location, setLocation] = useState("");
   const [notes, setNotes] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const serviceOptions = [
     "Building",
@@ -39,7 +41,7 @@ export default function RequestQuotePage() {
     );
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
     if (!name.trim() || !phone.trim() || !location.trim() || !size.trim() || services.length === 0) {
@@ -60,6 +62,34 @@ export default function RequestQuotePage() {
       `Preferred: ${preferredContact}\n` +
       (email.trim() ? `Email: ${email}\n` : "") +
       (notes.trim() ? `Notes: ${notes}\n` : "");
+
+    setIsSubmitting(true);
+
+    // Phase 3: this already saves-then-opens-WhatsApp (from Phase 2's await).
+    // This step just makes that visible to the customer via a disabled
+    // "Submitting..." button. Failure handling/warning is Phase 4.
+    if (supabase) {
+      const { error } = await supabase.from("leads").insert({
+        name,
+        phone,
+        location,
+        services,
+        size,
+        work_type: workType,
+        hire_timing: hireTiming,
+        plan_status: planStatus,
+        preferred_contact: preferredContact,
+        email: email.trim() || null,
+        notes: notes.trim() || null,
+        whatsapp_message: message,
+        status: "NEW",
+      });
+      if (error) {
+        console.error("Failed to save lead to Supabase:", error);
+      }
+    } else {
+      console.warn("Supabase client not configured — skipping lead save.");
+    }
 
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.location.href = url;
@@ -211,6 +241,7 @@ export default function RequestQuotePage() {
 
         <button
           type="submit"
+          disabled={isSubmitting}
           style={{
             padding: "12px 14px",
             borderRadius: 12,
@@ -218,10 +249,11 @@ export default function RequestQuotePage() {
             background: "#111",
             color: "#fff",
             fontWeight: 700,
-            cursor: "pointer",
+            cursor: isSubmitting ? "default" : "pointer",
+            opacity: isSubmitting ? 0.7 : 1,
           }}
         >
-          Submit & Open WhatsApp
+          {isSubmitting ? "Submitting..." : "Submit & Open WhatsApp"}
         </button>
 
         <p style={{ fontSize: 13, opacity: 0.7 }}>
